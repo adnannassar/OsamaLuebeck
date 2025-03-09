@@ -1,4 +1,4 @@
-import OOP.MyClass;
+package OOP.KlassenUndObjekten;
 
 public class Main {
     public static void main(String[] args) {
@@ -6,4 +6,5 @@ public class Main {
         m.x = 10;
         m.print();
     }
+
 }

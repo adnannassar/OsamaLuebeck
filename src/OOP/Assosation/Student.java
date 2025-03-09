@@ -1,4 +1,4 @@
-package OOP;
+package OOP.Assosation;
 
 public class Student {
     // Java Bean
@@ -8,39 +8,31 @@ public class Student {
     private int age;
     private String matrikelnummer;
     private float note;
-    private String ort;
-    private String plz;
-    private String strasse;
-    private int hausnummer;
+    private Address address;
 
     // Konstruktoren
 
     // default constructor
-    public Student() {}
+    public Student() {
+    }
 
     public Student(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public Student(String name, int age, String ort, String plz, String strasse, int hausnummer) {
+    public Student(String name, int age, Address address) {
         this.name = name;
         this.age = age;
-        this.ort = ort;
-        this.plz = plz;
-        this.strasse = strasse;
-        this.hausnummer = hausnummer;
+        this.address = address;
     }
 
-    public Student(String name, int age, String matrikelnummer, float note, String ort, String plz, String strasse, int hausnummer) {
+    public Student(String name, int age, String matrikelnummer, float note, Address address) {
         this.name = name;
         this.age = age;
         this.matrikelnummer = matrikelnummer;
         this.note = note;
-        this.ort = ort;
-        this.plz = plz;
-        this.strasse = strasse;
-        this.hausnummer = hausnummer;
+        this.address = address;
     }
 
     // Actions
@@ -61,20 +53,8 @@ public class Student {
         return note;
     }
 
-    public String getOrt() {
-        return ort;
-    }
-
-    public String getPlz() {
-        return plz;
-    }
-
-    public String getStrasse() {
-        return strasse;
-    }
-
-    public int getHausnummer() {
-        return hausnummer;
+    public Address getAddress() {
+        return address;
     }
 
     // Setters
@@ -94,20 +74,8 @@ public class Student {
         this.note = note;
     }
 
-    public void setOrt(String ort) {
-        this.ort = ort;
-    }
-
-    public void setPlz(String plz) {
-        this.plz = plz;
-    }
-
-    public void setStrasse(String strasse) {
-        this.strasse = strasse;
-    }
-
-    public void setHausnummer(int hausnummer) {
-        this.hausnummer = hausnummer;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public void study() {
@@ -127,18 +95,21 @@ public class Student {
         if (note != 0) {
             System.out.print(", Note: " + note);
         }
-        if (ort != null) {
-            System.out.print(", Ort: " + ort);
+        if (address != null) {
+            if (address.getOrt() != null) {
+                System.out.print(", Ort: " + address.getOrt());
+            }
+            if (address.getPlz() != null) {
+                System.out.print(", PLZ: " + address.getPlz());
+            }
+            if (address.getStrasse() != null) {
+                System.out.print(", Straße: " + address.getStrasse());
+            }
+            if (address.getHausnummer() != 0) {
+                System.out.print(", Hausnummer: " + address.getHausnummer());
+            }
         }
-        if (plz != null) {
-            System.out.print(", PLZ: " + plz);
-        }
-        if (strasse != null) {
-            System.out.print(", Straße: " + strasse);
-        }
-        if (hausnummer != 0) {
-            System.out.print(", Hausnummer: " + hausnummer);
-        }
+
         System.out.println();
     }
 }

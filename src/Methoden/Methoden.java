@@ -1,5 +1,7 @@
 package Methoden;
 
+import java.util.Scanner;
+
 public class Methoden {
     public static void main(String[] args) {
         // methoden aufrufen
@@ -8,21 +10,23 @@ public class Methoden {
         mul(2, 3);
         div(4, 2);
 
-        String benutzerName = "Max";
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Bitte geben Sie Ihren Namen ein: ");
+        String benutzerName = scanner.next();
 
         sagWelcome();
 
-        if (benutzerName == "Max") {
-            float summe = summeWarenkorb(4.0f, 2.5f);
-            float discount = summe - (summe * 0.1f);
-            System.out.println("Die Summe des Warenkorbs beträgt: " + discount);
+        float summeAusDerMethodeSummeWarenkorb = summeWarenkorb(4.0f, 2.5f);
+
+        if (benutzerName.equals("Max")) {
+            float reduziertesPreis = summeAusDerMethodeSummeWarenkorb - (summeAusDerMethodeSummeWarenkorb * 0.1f);
+            System.out.println("Die Summe des Warenkorbs beträgt: " + reduziertesPreis + "€");
         } else {
-            float summe = summeWarenkorb(4.0f, 2.5f);
-            System.out.println("Die Summe des Warenkorbs beträgt: " + summe);
+            System.out.println("Die Summe des Warenkorbs beträgt: " + summeAusDerMethodeSummeWarenkorb + "€");
         }
     }
 
-    public static void sagWelcome(){
+    public static void sagWelcome() {
         System.out.println("------------------------------------");
         System.out.println("Willkommen im Supermarkt");
         System.out.println("Bitte wählen Sie Ihre Produkte aus");

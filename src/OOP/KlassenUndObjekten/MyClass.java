@@ -1,4 +1,4 @@
-package OOP;
+package OOP.KlassenUndObjekten;
 
 public class MyClass {
     public int x = 10;
