@@ -9,6 +9,7 @@ public class Student {
     private String matrikelnummer;
     private float note;
     private Address address;
+    private Kontakt[] kontakte = new Kontakt[10]; // {k1, k2, null, null, null, null, null, null, null, null}
 
     // Konstruktoren
 
@@ -35,6 +36,16 @@ public class Student {
         this.address = address;
     }
 
+    public void addKontakt(Kontakt k) {
+        for (int i = 0; i < kontakte.length; i++) {
+            if (kontakte[i] == null) {
+                kontakte[i] = k;
+                break;
+            }
+        }
+    }
+
+
     // Actions
     // Getters
     public String getName() {
@@ -56,6 +67,11 @@ public class Student {
     public Address getAddress() {
         return address;
     }
+
+    public Kontakt getKontakt(int index) {
+        return kontakte[index];
+    }
+
 
     // Setters
     public void setName(String name) {
@@ -111,5 +127,18 @@ public class Student {
         }
 
         System.out.println();
+    }
+
+    public void printKontakte() {
+        if (kontakte[0] == null) {
+            System.out.println("Student " + name + " hat keine Kontakte");
+        } else {
+            for (int i = 0; i < kontakte.length; i++) {
+                if (kontakte[i] != null) {
+                    System.out.println("Kontakt " + (i + 1) + ": " + kontakte[i].getEmail());
+                }
+            }
+        }
+
     }
 }
