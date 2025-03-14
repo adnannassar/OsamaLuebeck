@@ -25,7 +25,8 @@ public class Person {
         this.alter = alter;
     }
 
-    void printInfo() {
-        System.out.println("Person --> Name: " + name + ", Alter: " + alter);
+    @Override
+    public String toString() {
+      return "Person --> Name: " + name + ", Alter: " + alter;
     }
 }

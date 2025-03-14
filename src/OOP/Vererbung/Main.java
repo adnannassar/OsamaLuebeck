@@ -8,10 +8,10 @@ public class Main {
         Student student = new Student("Peter Meier", 25);
         Professor professor = new Professor("Prof. Dr. Peter Schmidt", 50);
 
-        person.printInfo();
-        mitarbeiter.printInfo();
-        student.printInfo();
-        professor.printInfo();
+        System.out.println(person);
+        System.out.println(mitarbeiter);
+        System.out.println(student);
+        System.out.println(professor);
 
     }
 
