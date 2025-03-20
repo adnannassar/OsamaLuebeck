@@ -1,4 +1,4 @@
-package Arrays.OneDimArray;
+package Array.OneDimArray;
 
 public class ZweiteSchritteInOneDimArray {
     public static void main(String[] args) {
