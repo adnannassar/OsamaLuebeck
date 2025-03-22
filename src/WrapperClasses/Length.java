@@ -17,4 +17,8 @@ public class Length {
         System.out.println(names.size());
 
     }
+
+    void add(){
+        add();
+    }
 }
